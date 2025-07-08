@@ -70,3 +70,22 @@ plt.gca().xaxis.set_major_formatter('${x:,.0f}')
 * Senior Data Scientist and Senior Data Engineer have the highest median and upper-range salaries among the listed roles.
 * The Data Analyst role has the lowest median salary, this reflects a more limited salary range, possibly due to it being an entry-level position.
 * The Data Scientist role has one of the widest interquartile ranges, suggesting large variability in pay.
+
+### Highest Paid and Most Demanded Skills for Data Analysts
+
+### Visualize Data
+```python
+sns.barplot(data=df_top_pay, x='median', y=df_top_pay.index, ax=ax[0], hue='median', palette='dark:g_r')
+ax[0].set_title('Top 10 Highest Paying Skills for Data Analyst in Mexico')
+
+sns.barplot(data=df_top_skills, x='median', y=df_top_skills.index, ax=ax[1], hue='median', palette='dark:g_r')
+ax[1].set_title('Top 10 Most Popular Skills for Data Analyst in Mexico')
+```
+### Results
+![Highest Paid and most demanded skills ](images/top_skills_paying.png)
+
+### Insights
+* The top graph shows specialized technical skills like `scala`, `spark` and `go` these are associated with higher salaries, suggesting that advanced technical proficiency can increase earning potential.
+* The bottom graph highlights that foundational skills like `Python` and `SQL` are the most in-demand, even though they may not offer the highest salaries. Tis demonstrates the importance of these core skills for employability in data analysis roles.
+* There's a notorious distinction between the highest paid skills and those that are the most in-demand. Data Analysts aiming to maximize their potential should consider developing a diverse skill set including skills from both graphs.
+
