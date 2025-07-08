@@ -25,10 +25,11 @@ fig.suptitle('Skills Requested in Mexico Job Postings', fontsize=16)
 * Data Engineers require more specialized techical skills (AWS, Azure, Spark) compared to Data Analysts and Data Scientist who are expected to be proficient in more general data management and analysis tools (Tableu).
 
 ## 2. How are in-demand skills trending for Data Analysts?
-### Visualize Data
 To find the top trending skills for Data Analysts, I filtered the data frame to include only that specific job title, sorted it by month and skill demand throughout the year, and extracted the top 5 skills based on their demand over time.
 
 View the detailed steps in my notebook: [3_Skills_Trend.ipynb](3_Skills_Trend.ipynb)
+
+### Visualize Data
 
 ```python
 ax = plt.gca()
@@ -45,3 +46,27 @@ for i in range(5):
 * Excel experienced a significant increase around April, surpassing SQL, althought it shows a substantial decrease around May.
 * Both Tableau and Power BI show relatively stable demand throughout the year with some fluctuations. Python shows a slightly higher demand compared to the other ones and also remains stable towards the year's end.
 
+## 3. How well do jobs and skills pay for Data Analysts?
+For this visualization, I extracted the top 6 jobs based on their average yearly salary and arranged them by median salary.
+
+View the detailed steps in my notebook: [4_Salary_Analysis.ipynb](4_Salary_Analysis.ipynb)
+
+### Visualize Data
+
+```python
+sns.boxplot(data=df_mexico_top6, x='salary_year_avg', y='job_title_short', order=job_order)
+sns.set_theme(style='ticks')
+
+plt.title('Salary Distribution for Top 6 Data Jobs in Mexico')
+plt.xlabel('Yearly Salary')
+plt.ylabel('')
+plt.xlim(0, 300000)
+plt.gca().xaxis.set_major_formatter('${x:,.0f}')
+```
+### Results
+![Visualization of payment](images/salary_analysis.png)
+
+### Insights
+* Senior Data Scientist and Senior Data Engineer have the highest median and upper-range salaries among the listed roles.
+* The Data Analyst role has the lowest median salary, this reflects a more limited salary range, possibly due to it being an entry-level position.
+* The Data Scientist role has one of the widest interquartile ranges, suggesting large variability in pay.
