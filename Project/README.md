@@ -43,7 +43,7 @@ for i in range(5):
 
 ### Insights
 * `SQL` remains the most consistently demanded skill throughout the year.
-* `Excel` experienced a significant increase around April, surpassing `SQL`, althought it shows a substantial decrease around May.
+* `Excel` experienced a significant increase around April, surpassing `SQL`, although it shows a substantial decrease around May.
 * Both `Tableau` and `Power BI` show relatively stable demand throughout the year with some fluctuations. `Python` shows a slightly higher demand compared to the other ones and also remains stable towards the year's end.
 
 ## 3. How well do jobs and skills pay for Data Analysts?
@@ -116,3 +116,8 @@ adjust_text(texts, arrowprops=dict(arrowstyle='->', color='gray', lw=0.5))
 * `Scala` and `Spark` offer the highest median yearly salaries, but they appear in less than 10% of job postings.
 * `Excel` appears in nearly 45% of job postings, making it the most in-demand tool, although its median salary is moderate.
 * `Python` and `SQL` are both in 20-30% demand range and offer salaries above $100K, making them optimal skills in terms of both values and opportunity.
+
+# Conclusion
+This analysis offers a coprehensive overview of the data job market in Mexico, focusing on the most in-demand roles, trending skills, salary distributions, and optimal tools for Data Analysis.
+
+This analysis highlights that Python and SQL are the most essential and well-balanced skills for Data Analysts in terms of demand and salary. While tools like Excel and Tableau remain widely used, they offer lower payment compared to more specialized skills like Scala ans Spark. Senior-level roles command the highest salaries. Overall, combining core skills with select advanced technologies can help analysts maximize both employability and earning potential.
