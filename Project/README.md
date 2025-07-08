@@ -20,9 +20,9 @@ fig.suptitle('Skills Requested in Mexico Job Postings', fontsize=16)
 ![Visualization of Top Skills](images/top_skills_per_job.png)
 
 ### Insights
-* Python is a versatile skill, highly demanded across all three roles, but most prominently for Data Scientists and Data Engineers (62%).
-* SQL is the most requested skill for Data Analysts and Data Engineers, however for Data Scientists is requested in over half the job postings of this role.
-* Data Engineers require more specialized techical skills (AWS, Azure, Spark) compared to Data Analysts and Data Scientist who are expected to be proficient in more general data management and analysis tools (Tableu).
+* `Python` is a versatile skill, highly demanded across all three roles, but most prominently for Data Scientists and Data Engineers (62%).
+* `SQL` is the most requested skill for Data Analysts and Data Engineers, however for Data Scientists is requested in over half the job postings of this role.
+* Data Engineers require more specialized techical skills `(AWS, Azure, Spark)` compared to Data Analysts and Data Scientist who are expected to be proficient in more general data management and analysis tools `(Tableu)`.
 
 ## 2. How are in-demand skills trending for Data Analysts?
 To find the top trending skills for Data Analysts, I filtered the data frame to include only that specific job title, sorted it by month and skill demand throughout the year, and extracted the top 5 skills based on their demand over time.
@@ -41,10 +41,10 @@ for i in range(5):
 ### Results
 ![Visualization of Trending Skills](images/trending_skills.png)
 
-### Insights:
-* SQL remains the most consistently demanded skill throughout the year.
-* Excel experienced a significant increase around April, surpassing SQL, althought it shows a substantial decrease around May.
-* Both Tableau and Power BI show relatively stable demand throughout the year with some fluctuations. Python shows a slightly higher demand compared to the other ones and also remains stable towards the year's end.
+### Insights
+* `SQL` remains the most consistently demanded skill throughout the year.
+* `Excel` experienced a significant increase around April, surpassing `SQL`, althought it shows a substantial decrease around May.
+* Both `Tableau` and `Power BI` show relatively stable demand throughout the year with some fluctuations. `Python` shows a slightly higher demand compared to the other ones and also remains stable towards the year's end.
 
 ## 3. How well do jobs and skills pay for Data Analysts?
 For this visualization, I extracted the top 6 jobs based on their average yearly salary and arranged them by median salary.
@@ -89,3 +89,30 @@ ax[1].set_title('Top 10 Most Popular Skills for Data Analyst in Mexico')
 * The bottom graph highlights that foundational skills like `Python` and `SQL` are the most in-demand, even though they may not offer the highest salaries. Tis demonstrates the importance of these core skills for employability in data analysis roles.
 * There's a notorious distinction between the highest paid skills and those that are the most in-demand. Data Analysts aiming to maximize their potential should consider developing a diverse skill set including skills from both graphs.
 
+## 4. What is the most optimal skill to learn for Data Analysts?
+
+View the detailed steps in my notebook: [5_Optimal_Skills.ipynb](5_Optimal_Skills.ipynb)
+
+### Visualize Data
+```python
+sns.scatterplot(data=df_merged, x='skill_percentage',
+                y='median_salary',
+                hue='technology')
+sns.set_theme(style='ticks')
+
+# Adjust text labels to avoid overlap
+texts = []
+for i, text in enumerate(df_skills_demand.index):
+    texts.append(plt.text(df_skills_demand['skill_percentage'].iloc[i],
+                          df_skills_demand['median_salary'].iloc[i],
+                          text))
+
+adjust_text(texts, arrowprops=dict(arrowstyle='->', color='gray', lw=0.5))
+```
+### Results
+![Optimal Skills for Data Analystis ](images/optimal_skills.png)
+
+### Insights
+* `Scala` and `Spark` offer the highest median yearly salaries, but they appear in less than 10% of job postings.
+* `Excel` appears in nearly 45% of job postings, making it the most in-demand tool, although its median salary is moderate.
+* `Python` and `SQL` are both in 20-30% demand range and offer salaries above $100K, making them optimal skills in terms of both values and opportunity.
